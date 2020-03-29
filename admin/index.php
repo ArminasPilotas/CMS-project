@@ -1,5 +1,5 @@
 <?php
-include "includes/header.php";
+include "includes/admin_header.php";
 ?>
 
     <div id="wrapper">
@@ -7,10 +7,9 @@ include "includes/header.php";
 
 
 
-
         <!-- Navigation -->
     <?php
-    include "includes/navigation.php";
+    include "includes/admin_navigation.php";
     ?>
 
         <div id="page-wrapper">
@@ -38,5 +37,5 @@ include "includes/header.php";
         <!-- /#page-wrapper -->
 
         <?php
-            include "includes/footer.php";
+            include "includes/admin_footer.php";
         ?>
