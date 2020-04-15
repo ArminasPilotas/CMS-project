@@ -22,7 +22,7 @@ include "includes/admin_header.php";
 
                         <h1 class="page-header">
                             Welcome To Admin
-                            <small>Author</small>
+                            <small><?php echo $_SESSION['username']; ?></small>
                         </h1>
 
 
