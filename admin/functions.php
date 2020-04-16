@@ -46,4 +46,15 @@ function delete_categories(){
         header("Location: categories.php"); //redirects to categories.php
     }
 }
+function ck_editor(){
+    ?>
+    <script>
+    ClassicEditor
+    .create( document.querySelector( '#editor' ) )
+    .catch( error => {
+        console.error( error );
+    } );
+    </script>
+<?php
+}
 ?>

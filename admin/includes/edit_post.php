@@ -54,6 +54,7 @@ if(isset($_POST['update_post'])){
     $update_post= mysqli_query($connection,$query);
 
     confirmQuery($update_post);
+    echo "<p class='bg-success'>Post Updated. <a href='../post.php?p_id={$the_post_id}'>View Post</a> or <a href='posts.php'>Edit More Posts</a></p>";
 }
 ?>
 
@@ -86,8 +87,19 @@ if(isset($_POST['update_post'])){
     </div>
 
     <div class="form-group">
-        <label for="post_status">Post Status</label>
-        <input value="<?php echo $post_status; ?>" type="text" class="form-control" name="post_status">
+    <select name="post_status" id="">
+        <option value='<?php echo $post_status; ?>'><?php echo $post_status; ?>'</option>
+        <?php
+        if($post_status == 'Published' ){
+            echo "<option value='Draft'>Draft</option>";
+
+        }
+        else {
+            echo "<option value='Published'>Published</option>";
+
+        }
+        ?>
+    </select>
     </div>
 
     <div class="form-group">
@@ -102,11 +114,13 @@ if(isset($_POST['update_post'])){
 
     <div class="form-group">
         <label for="post_content">Post Content</label>
-        <textarea  class="form-control" name="post_content" id="" cols="30" rows="10">
+        <textarea  class="form-control" name="post_content" id="editor" cols="300" rows="10">
     <?php echo $post_content; ?>
         </textarea>
     </div>
-
+    <?php
+    ck_editor();
+    ?>
     <div class="form-group">
         <input class="btn btn-primary" type="submit" name="update_post" value="Publish Post">
     </div>

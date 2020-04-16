@@ -19,7 +19,7 @@ if(isset($_POST['create_user'])){
     $query .= "VALUES('{$user_randsalt}','{$user_image}','{$user_firstname}','{$user_lastname}','{$user_role}','{$username}','{$user_email}','{$user_password}' ) ";
     $create_user_query= mysqli_query($connection,$query);
     confirmQuery($create_user_query);
-
+    echo "User Created" . " " . "<a href='users.php'>View Users</a>";
 }
 ?>
 
