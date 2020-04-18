@@ -13,4 +13,12 @@ $(document).ready(function () {
 
     });
 
+var div_box= "<div id='load-screen'><div id='loading'></div></div>";
+$("body").prepend(div_box);
+$('#load_screen').delay(3).fadeOut(6, function () {
+    $(this).remove();
+
+});
+
+
 });
