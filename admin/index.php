@@ -5,8 +5,6 @@ include "includes/admin_header.php";
     <div id="wrapper">
 
 
-
-
         <!-- Navigation -->
     <?php
     include "includes/admin_navigation.php";
@@ -24,7 +22,6 @@ include "includes/admin_header.php";
                             Welcome To Admin
                             <small><?php echo $_SESSION['username']; ?></small>
                         </h1>
-
 
                     </div>
                 </div>
