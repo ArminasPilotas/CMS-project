@@ -84,12 +84,16 @@ if(isset($_GET['change_to_sub'])){
     header("Location: users.php");
 }
 
-if(isset($_GET['delete'])){ //DELETE POST
-    $the_user_id= $_GET['delete'];
-    $query = "DELETE FROM users WHERE user_id={$the_user_id}";
-    $delete_user_query= mysqli_query($connection,$query);
-    confirmQuery($delete_user_query);
-    header("Location: users.php");
+if(isset($_GET['delete'])){ //DELETE USER
+    if(isset($_SESSION['user_role'])) {
+        if($_SESSION['user_role']=='Admin') {
+            $the_user_id =mysqli_real_escape_string($connection,$_GET['delete']);
+            $query = "DELETE FROM users WHERE user_id={$the_user_id}";
+            $delete_user_query = mysqli_query($connection, $query);
+            confirmQuery($delete_user_query);
+            header("Location: users.php");
+        }
+    }
 }
 
 
